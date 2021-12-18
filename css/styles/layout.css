@@ -1,0 +1,128 @@
+body {
+  max-width: 1280px;
+  font-family: "poppins", sans-serif;
+  background-color: rgb(243, 243, 243);
+  margin: 0 auto;
+  color: #313131;
+}
+.details-layout,
+.layout,
+.contact-layout,
+.blog-layout {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+}
+
+.layout {
+  grid-template-areas:
+    "nav"
+    "header"
+    "main"
+    "latest"
+    "side"
+    "footer";
+  grid-template-rows: 0.2fr 1fr 0.6fr 2fr 1.2fr 0.4fr;
+}
+
+/* blog */
+.contact-layout,
+.details-layout,
+.blog-layout {
+  grid-template-rows: 0.4fr 0.4fr 4fr 1fr;
+  grid-template-areas:
+    "nav"
+    "header"
+    "main"
+    "footer";
+}
+
+nav {
+  background-color: #fff;
+  grid-area: nav;
+}
+
+header {
+  background-image: url("../../images/banner/header_text.jpg");
+  background-size: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  grid-area: header;
+  background-color: #fff;
+}
+
+main {
+  background-color: #fff;
+  grid-area: main;
+}
+
+#latest {
+  background-color: #fff;
+  grid-area: latest;
+}
+
+#side {
+  background-color: #fff;
+  grid-area: side;
+}
+
+footer {
+  background-color: #313131;
+  grid-area: footer;
+  color: #fff !important;
+}
+
+footer a:visited {
+  color: #fff;
+}
+header,
+main,
+#side,
+#latest,
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+footer {
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  header {
+    height: 100px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 0.8fr 1fr 1fr 2fr;
+    grid-template-areas:
+      "nav"
+      "header"
+      "main"
+      "latest"
+      "side"
+      "footer";
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  header {
+    height: 75px;
+  }
+}
+
+/* @media only screen and (max-width: 400px) {
+  .layout {
+    grid-template-rows: 0.1fr 0.6fr 0.8fr 2fr 1fr 0.8fr;
+  }
+} */
