@@ -7,6 +7,7 @@ const subject = document.querySelector("#subject");
 const subjectCheck = document.querySelector("#subjectError");
 const message = document.querySelector("#message");
 const messageCheck = document.querySelector("#messageError");
+const msg = "Thank you, i`ll get back to you as soon as possible";
 
 function validateContactForm() {
   event.preventDefault();
@@ -28,6 +29,7 @@ function validateContactForm() {
   }
   if (errorCheck(message.value, 25) === true) {
     messageCheck.style.display = "none";
+    document.getElementById("succsess").textContent = `${msg}`;
   } else {
     messageCheck.style.display = "block";
   }
